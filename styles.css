@@ -1,0 +1,62 @@
+:root{
+  --wine: rgb(176, 42, 62);   /* brand action color, as specified */
+  --wine-dark: rgb(140, 30, 47);
+  --wine-light: #F7EDEE;
+  --cream: #FBF9F6;
+  --ink: #2B2320;
+  --border: #eee3da;
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Inter',sans-serif;background:var(--cream);color:var(--ink);}
+h1,h2,h3{font-family:'Fraunces',serif;margin:0;}
+a{color:var(--wine);}
+.btn-primary{background:var(--wine);color:#fff;border:none;border-radius:8px;padding:10px 18px;font-weight:600;cursor:pointer;}
+.btn-primary:hover{background:var(--wine-dark);}
+.btn-secondary{background:#fff;border:1px solid var(--border);border-radius:8px;padding:8px 14px;cursor:pointer;font-size:13px;}
+input, select, textarea{border:1px solid var(--border);border-radius:8px;padding:9px 12px;font-size:14px;font-family:inherit;width:100%;}
+.card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px;}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+th{text-align:left;background:#faf6f1;color:#8a7d73;text-transform:uppercase;font-size:11px;letter-spacing:.04em;padding:10px 14px;}
+td{padding:10px 14px;border-top:1px solid var(--border);}
+
+/* --- Ask AI markdown rendering (tables, bold, headers in chat replies) --- */
+.markdown-body{line-height:1.55;}
+.markdown-body p{margin:0 0 8px;}
+.markdown-body p:last-child{margin-bottom:0;}
+.markdown-body strong{font-weight:700;}
+.markdown-body h1,.markdown-body h2,.markdown-body h3{font-family:'Fraunces',serif;font-size:15px;margin:10px 0 6px;}
+.markdown-body ul,.markdown-body ol{margin:6px 0 8px;padding-left:20px;}
+.markdown-body table{width:100%;border-collapse:collapse;margin:8px 0;font-size:13px;background:#fff;border-radius:8px;overflow:hidden;}
+.markdown-body th{background:#faf6f1;color:#8a7d73;text-transform:uppercase;font-size:11px;letter-spacing:.03em;padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);}
+.markdown-body td{padding:8px 12px;border-top:1px solid var(--border);}
+.markdown-body hr{border:none;border-top:1px solid var(--border);margin:10px 0;}
+.markdown-body code{background:#f4f0ea;padding:1px 5px;border-radius:4px;font-size:12px;}
+.markdown-body a{color:var(--wine);font-weight:600;}
+.markdown-body a:hover{text-decoration:none;}
+
+/* --- Client portal: horizontal tab navigation, mobile + desktop --- */
+.client-shell{display:flex;flex-direction:column;min-height:100vh;}
+
+.login-hero{flex:1;display:flex;justify-content:flex-end;align-items:center;padding:40px 60px;}
+@media (max-width:640px){
+  .login-hero{justify-content:center;padding:20px;}
+}
+.client-topbar{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:#fff;border-bottom:1px solid var(--border);}
+.client-tabs{display:flex;gap:4px;overflow-x:auto;background:#fff;border-bottom:1px solid var(--border);padding:0 12px;}
+.client-tabs a{white-space:nowrap;padding:12px 14px;font-size:14px;color:#8a7d73;text-decoration:none;border-bottom:2px solid transparent;}
+.client-tabs a.active{color:var(--wine);border-color:var(--wine);font-weight:600;}
+.client-main{flex:1;padding:20px;max-width:1100px;margin:0 auto;width:100%;}
+@media (max-width:640px){ .client-main{padding:14px;} }
+
+/* --- Admin panel: vertical nav on desktop, collapses to a top bar on mobile --- */
+.admin-shell{display:flex;min-height:100vh;}
+.admin-sidebar{width:220px;flex-shrink:0;background:#201A17;color:#fff;}
+.admin-sidebar nav a{display:block;padding:12px 18px;color:#d9cfc4;text-decoration:none;font-size:14px;}
+.admin-sidebar nav a.active{background:rgba(255,255,255,.08);color:#fff;font-weight:600;border-right:3px solid var(--wine);}
+.admin-main{flex:1;padding:24px;overflow-x:auto;}
+@media (max-width:768px){
+  .admin-shell{flex-direction:column;}
+  .admin-sidebar{width:100%;}
+  .admin-sidebar nav{display:flex;overflow-x:auto;}
+  .admin-sidebar nav a.active{border-right:none;border-bottom:3px solid var(--wine);}
+}
